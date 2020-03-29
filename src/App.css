@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -26,13 +26,76 @@
 
 .App-link {
   color: #61dafb;
+} */
+
+/* p {
+  color: red;
+} */
+
+/* .navbar-light .navbar-nav .nav-link a {
+  color: red;
+} */
+
+/* change the link color */
+.navbar-custom {
+  background-color:rgba(67, 70, 87, 0.8);
 }
 
-@keyframes App-logo-spin {
+/* active navbar item */
+.navbar-nav .active>a.nav-link {
+  color: rgb(236, 11, 11);
+  /* text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 #000; */
+  font-weight: bold;
+  /* text-decoration: underline; */
+  border-bottom: 1px solid red;
+
+}
+
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item:focus .nav-link {
+  color: rgb(236, 11, 11);
+}
+/* .navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item:focus .nav-link {
+  color: rgb(236, 11, 11);
+} */
+
+/* all nav links */
+.navbar-nav a.nav-link {
+  color: rgb(220, 214, 214);
+  margin-left: 2em;
+  font-family: 'Roboto';
+  /* font-size: larger; */
+}
+
+.navbar-custom .navbar-toggler {
+  color: white
+}
+
+.navbar-custom a.navbar-brand {
+  color: white
+}
+
+.labelStyle {
+  font-size: 1.2em;
+  color: white;
+  text-align: left;
+}
+
+fieldset {
+  border: 1px solid red;
+  width: auto;
+}
+/* .navbar-custom .navbar-nav .nav-link {
+  color: rgba(240, 4, 4, 0.5);
+} */
+
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */

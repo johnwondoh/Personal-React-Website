@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import EachEducation from './EachEducation'
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { withStyles } from '@material-ui/styles'
+import { v4 as uuidv4 } from 'uuid'
 
 const styles = {
     sectionHeader: {
@@ -26,16 +26,24 @@ const styles = {
             fontFamily: 'Open Sans',
             fontSize: '1.1em',
             lineHeight: '1.7em',
-            color: 'white'
+            // color: 'white',
+            width: '70%',
+            margin: 'auto',
+            ['@media (max-width:780px)']: {
+                width: '85%'
+            }
         }
         
     },
     sectionStyle: {
-        backgroundColor: 'black',
+        // backgroundColor: 'black',
+        // backgroundColor: '#e1e9ed',
+        background: 'rgb(221,233,249)',
+        background: 'linear-gradient(45deg, rgba(221,233,249,0.5) 0%, rgba(238,245,251,0.5) 50%, rgba(229,244,252,0.5) 80%, rgba(221,229,249,0.5) 100%)',
         '& Container': {
             paddingBottom: '10rem'
         },
-        marginTop: '2rem'
+        // marginTop: '2rem'
     },
     container: {
         // background: 'blue',
@@ -56,7 +64,8 @@ class Education extends Component {
                     award: 'Doctor of Philosophy',
                     startYear: 2014,
                     endYear: 2018,
-                    logo:'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0004/4936/brand.gif?itok=KEeQBanq'
+                    logo:'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0004/4936/brand.gif?itok=KEeQBanq',
+                    moreInfo: 'I did my PhD research in AI and Software Engineering Lab at UniSA. My research work focused on Business Process Optimisation under dynamic conditions.',
                 },
                 {
                     institution: 'University of Mines & Technology',
@@ -64,7 +73,8 @@ class Education extends Component {
                     award: 'Bachelor of Science',
                     startYear: 2008,
                     endYear: 2012,
-                    logo:'https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/University_of_Mines_and_Technology_logo.jpg/240px-University_of_Mines_and_Technology_logo.jpg'
+                    logo:'https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/University_of_Mines_and_Technology_logo.jpg/240px-University_of_Mines_and_Technology_logo.jpg',
+                    moreInfo: ''
                 }
             ]
         }
@@ -77,19 +87,24 @@ class Education extends Component {
                     award={e.award}
                     startYear={e.startYear}
                     endYear={e.endYear}
-                    logo={e.logo}/>)
+                    moreInfo={e.moreInfo}
+                    logo={e.logo} key={uuidv4()}/>)
         const { classes} = this.props
         return (
-            <section className={classes.sectionStyle}>
+            <section id='education' className={classes.sectionStyle}>
                 <div className={classes.sectionHeader}>
                     <h2>Education</h2>
                     <div></div>
-                    <p>institutions</p>
+                    <p>I've had the opportunity to study in formal 
+                        institution and have also made use of several online tools 
+                        to acquire knowledge. Some of these platforms include edX, Udemy, Coursera, and youtube.
+                        My formal education took place in the following institution...  
+                    </p>
                 </div>
                 <div className={classes.container}>
-                    <Row>
+                    {/* <Row> */}
                         {educations}
-                    </Row>
+                    {/* </Row> */}
                 </div>
             </section>
         );

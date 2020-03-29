@@ -5,11 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* padding-top: 60px; */
 }
+/* section {
+  padding-top: 20px;
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cairo:400,700|Teko&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Eczar|Libre+Franklin:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");

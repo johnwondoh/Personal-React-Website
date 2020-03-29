@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ListGroup, ListGroupItem } from 'react-bootstrap'
+// import { ListGroup, ListGroupItem } from 'react-bootstrap'
+import { ListGroupItem } from 'react-bootstrap'
 
 
 class ItemExperience extends Component {

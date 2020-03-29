@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './EachFramework.css'
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card'
 import { withStyles} from '@material-ui/styles'
 
 const styles = {
@@ -9,7 +8,7 @@ const styles = {
         // backgroundColor: 'red',
         // border: '3px solid green'
         '& img': {
-            height: '8rem'
+            height: '6rem'
         },
         '& h4': {
             fontSize: '1.2rem',
@@ -29,14 +28,18 @@ class EachFramework extends Component {
     
     render() {
         const {classes} = this.props
-        const bigLogo = ['MongoDB']
-        console.log(bigLogo.includes(this.props.title))
+        const bigLogo = ['NodeJS', 'Scikit-learn', 'Entity Framework', 'MS SQL Server', 'SQLite']
+        // console.log(bigLogo.includes(this.props.title))
         let rangeArray = bigLogo.includes(this.props.title) ?
-            [8, 12] : [4, 6]
+            12 : 6
+        const skillType = ['language', 'library', 'database', 'software']
+        skillType.forEach(type => {
+            // console.log(type)
+        })
         return (
-            <Col md={rangeArray[0]} sm={rangeArray[1]} className={classes.skill}>
+            <Col lg={3} md={4} xs={rangeArray} className={classes.skill}>
                 <div className='p-2 text-center'>
-                    <img src={this.props.imageUrl} />
+                    <img src={this.props.imageUrl} alt={this.props.title}/>
                     <h4 className='text-center'>{this.props.title}</h4>
                     {/* <p>{this.props.rate}</p> */}
                 </div>
