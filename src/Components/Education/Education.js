@@ -4,11 +4,14 @@ import Row from 'react-bootstrap/Row'
 import { withStyles } from '@material-ui/styles'
 import { v4 as uuidv4 } from 'uuid'
 
+
+const patternPath = process.env.PUBLIC_URL + '/images/email-pattern/email-pattern.png'
 const styles = {
     sectionHeader: {
         paddingTop: '2em',
         paddingBottom: '2em',
         textAlign: 'center',
+        // color: 'white',
         '& h2': {
             textAlign: 'center',
             fontFamily: 'Open Sans',
@@ -36,10 +39,10 @@ const styles = {
         
     },
     sectionStyle: {
-        // backgroundColor: 'black',
-        // backgroundColor: '#e1e9ed',
-        background: 'rgb(221,233,249)',
-        background: 'linear-gradient(45deg, rgba(221,233,249,0.5) 0%, rgba(238,245,251,0.5) 50%, rgba(229,244,252,0.5) 80%, rgba(221,229,249,0.5) 100%)',
+        // background: 'rgb(221,233,249)',
+        // background: 'linear-gradient(45deg, rgba(221,233,249,0.5) 0%, rgba(238,245,251,0.5) 50%, rgba(229,244,252,0.5) 80%, rgba(221,229,249,0.5) 100%)',
+        // backgroundImage: `linear-gradient(0deg, rgba(101, 157, 189,0.4), rgba(232, 234, 237,0.7)), url(${patternPath})`,
+        backgroundSize: '60em',
         '& Container': {
             paddingBottom: '10rem'
         },
@@ -47,7 +50,17 @@ const styles = {
     },
     container: {
         // background: 'blue',
-        width: '95%',
+        width: '65%',
+        // width: '51%',
+        ['@media (max-width:992px)']: {
+            width: '85%'
+        },
+        ['@media (max-width:780px)']: {
+            width: '85%'
+        },
+        ['@media (max-width:576px)']: {
+            width: '90%'
+        },
         margin: 'auto',
         paddingBottom: '2rem'
     }
@@ -64,7 +77,7 @@ class Education extends Component {
                     award: 'Doctor of Philosophy',
                     startYear: 2014,
                     endYear: 2018,
-                    logo:'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0004/4936/brand.gif?itok=KEeQBanq',
+                    logo:'/images/companies/unisa.png',
                     moreInfo: 'I did my PhD research in AI and Software Engineering Lab at UniSA. My research work focused on Business Process Optimisation under dynamic conditions.',
                 },
                 {
@@ -73,7 +86,7 @@ class Education extends Component {
                     award: 'Bachelor of Science',
                     startYear: 2008,
                     endYear: 2012,
-                    logo:'https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/University_of_Mines_and_Technology_logo.jpg/240px-University_of_Mines_and_Technology_logo.jpg',
+                    logo:'/images/companies/UMaT-logo-238x300.jpg',
                     moreInfo: ''
                 }
             ]
@@ -102,10 +115,17 @@ class Education extends Component {
                     </p>
                 </div>
                 <div className={classes.container}>
-                    {/* <Row> */}
+                    <Row>
                         {educations}
-                    {/* </Row> */}
+                    </Row>
                 </div>
+
+                {/* <div className={classes.sectionHeader}>
+                    <p> 
+                        I've also taken a number or course to improve my skillset and add new skillset
+                        on edX, Udemy, Coursera, youtube, among others  
+                    </p>
+                </div> */}
             </section>
         );
     }

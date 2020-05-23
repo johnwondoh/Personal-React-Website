@@ -95,6 +95,18 @@ class WebNav extends Component {
                                 </Link>
                             </li>
                             <li className="nav-item">
+                                <Link className="nav-link" href="#experience"
+                                    activeClass="active"
+                                    to="experience"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500}>
+                                    {/* <a className="nav-link" href="#experience">EXPERIENCE</a> */}
+                                    EXPERIENCE
+                                </Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link" href="#education"
                                     activeClass="active"
                                     to="education"
@@ -116,18 +128,6 @@ class WebNav extends Component {
                                     duration={500}>
                                     {/* <a className="nav-link" href="#awards">AWARDS</a> */}
                                     AWARDS
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#experience"
-                                    activeClass="active"
-                                    to="experience"
-                                    spy={true}
-                                    smooth={true}
-                                    offset={-70}
-                                    duration={500}>
-                                    {/* <a className="nav-link" href="#experience">EXPERIENCE</a> */}
-                                    EXPERIENCE
                                 </Link>
                             </li>
                             <li className="nav-item">

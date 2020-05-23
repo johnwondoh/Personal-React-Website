@@ -9,25 +9,18 @@ import Experience from './Components/Experience/Experience'
 import Welcome from './Components/Welcome/Welcome'
 import Contact from './Components/Contact/Contact'
 import Frameworks from './Components/Skills/Frameworks/Frameworks'
+// import Publications from './Components/Publications/Publications'
 
 function App() {
   return (
     <div className="App">
       <Welcome />
       <About />
-      {/* <Skills /> */}
       <Frameworks />
+      <Experience />
       <Education />
       <Awards />
-      <Experience />
       <Contact/>
-      {/* <ul>
-        <li>check best file order</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul> */}
     </div>
   );
 }

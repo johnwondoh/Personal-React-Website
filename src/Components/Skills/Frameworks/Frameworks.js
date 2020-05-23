@@ -39,7 +39,7 @@ const styles = {
         
     },
     skillStyle: {
-        width: '75%',
+        width: '55%',
         margin: 'auto',
         '& h3': {
             textAlign: 'center',
@@ -68,13 +68,13 @@ const styles = {
         // margin: '40px', /* just for contrast */
         marginTop: '2.5em',
         position: 'relative',
-        border: '1px solid #e7e3d4',
+        // border: '1px solid #e7e3d4',
         // border: '3px solid #2488ed',
         // backgroundColor:'#c2cad0',
         // backgroundColor:'#41B3A3',
         // backgroundImage: `url(${patternPath})`,
         // backgroundImage: `linear-gradient(0deg, rgba(133, 144, 170, 0.5), rgba(133, 144, 170, 0.5)), url(${patternPath})`,
-        backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255,0.7), rgba(255, 255, 255,0.7)), url(${patternPath})`,
+        backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255,0.5), rgba(255, 255, 255,0.5)), url(${patternPath})`,
         borderRadius: '12px',
         boxShadow: '8px 8px 6px -6px rgba(0, 0, 0, 0.5)',
         padding: '20px',
@@ -83,14 +83,18 @@ const styles = {
       
     componentTitle: {
         position: 'absolute',
-        top: '-15px',
+        top: '-1em',
         // background: '#cccccc',
-        backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255), rgba(255, 255, 255))`,
+        // backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255), rgba(255, 255, 255))`,
         // background: '#fff',
-        padding: '0 15px',
+        padding: '0.5em 1em',
         border: '1px solid #e7e3d4',
+        backgroundColor: 'rgb(30, 61, 82)',
+        boxShadow: '0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 100px rgba(0, 0, 0, 0.06), 0 20px 30px rgba(0, 0, 0, 0.12)',
+          
         fontFamily: 'Open Sans',
-        color: '#005fa3',
+        // color: '#005fa3',
+        color: 'white',
         // fontWeight: 'bold',
         // fontWeight: 'bold',
         // border: '3px solid #d1d7e0',
