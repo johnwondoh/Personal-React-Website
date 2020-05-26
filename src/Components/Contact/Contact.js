@@ -4,6 +4,7 @@ import { MdEmail, MdLocalPhone } from 'react-icons/md'
 import { withStyles } from '@material-ui/styles'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+// import ContainerFuild from 'react-bootstrap/Col'
 
 const styles = {
     sectionHeader: {
@@ -99,6 +100,7 @@ class Contact extends Component {
             <section id='contact' className={classes.sectionStyle}>
                 <div className={classes.sectionHeader}>
                     <h2>Contact me</h2>
+                    <div className='container-fluid'>
                     <Row>
                         <Col md={6}>
                             <h3>Get in touch</h3>
@@ -178,7 +180,7 @@ class Contact extends Component {
                         </div>
                         </Col>
                     </Row>
-                    
+                    </div>
                 </div>
             </section>
         );
