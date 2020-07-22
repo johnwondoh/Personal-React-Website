@@ -41,9 +41,9 @@ class WebNav extends Component {
             } else {
               elem.lastjump = null;
             }
-          }
-          
+          }  
     }
+    
     render() {
         
         return (

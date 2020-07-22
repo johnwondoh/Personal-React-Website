@@ -142,6 +142,13 @@ class Frameworks extends Component {
                     
                 },
                 {
+                    title: 'Django',
+                    rate: 4,
+                    imageUrl: '/images/logos/django.png',
+                    type: 'library'
+                    
+                },
+                {
                     title: 'MongoDB',
                     rate: 5, 
                     imageUrl: '/images/logos/mongodb.png',
@@ -208,15 +215,9 @@ class Frameworks extends Component {
                     type: 'library'    
                 },
                 {
-                    title: 'pandas',
+                    title: 'Pandas',
                     rate: 5, 
                     imageUrl: '/images/logos/pandas-logo-300.png',
-                    type: 'library'   
-                },
-                {
-                    title: 'Scikit-learn',
-                    rate: 5, 
-                    imageUrl: '/images/logos/Scikit_learn_logo_small.svg.png',
                     type: 'library'   
                 },
                 {
@@ -246,7 +247,7 @@ class Frameworks extends Component {
                 {
                     title: 'Entity Framework',
                     rate: 5, 
-                    imageUrl: '/images/logos/entityframework.jpg',
+                    imageUrl: '/images/logos/entityframework.png',
                     type: 'library'  
                 },
                 {
@@ -266,6 +267,12 @@ class Frameworks extends Component {
                     rate: 5, 
                     imageUrl: '/images/logos/Adobe_Photoshop_CC_icon.svg.png',
                     type: 'software'  
+                },
+                {
+                    title: 'Scikit-learn',
+                    rate: 5, 
+                    imageUrl: '/images/logos/Scikit_learn_logo_small.svg.png',
+                    type: 'library'   
                 }
             ]
         }

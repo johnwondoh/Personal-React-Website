@@ -115,7 +115,7 @@ class EachExperience extends Component {
         }
         
         return (
-            <Col lg={6} className={classes.main}>
+            <Col mg={6} className={classes.main}>
                 <Card className={classes.card}>
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     {/* <Card.Body> */}

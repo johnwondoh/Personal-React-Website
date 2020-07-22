@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { FaLinkedin, FaFacebookSquare, FaGithub, FaStackOverflow, FaInstagram, } from 'react-icons/fa'
+import { FaLinkedin, FaFacebookSquare, FaGithub, FaStackOverflow, FaInstagram, FaGlassMartiniAlt, } from 'react-icons/fa'
 import { MdEmail, MdLocalPhone } from 'react-icons/md'
 import { withStyles } from '@material-ui/styles'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import emailjs from 'emailjs-com'
+import $ from 'jquery';
 // import ContainerFuild from 'react-bootstrap/Col'
 
 const styles = {
@@ -90,10 +92,72 @@ const styles = {
             color: 'white',
             fontSize: '1.3em'
         }
+    },
+    errorMessage: {
+        backgroundColor: 'rgba(245, 243, 118, 1)'
     }
 }
 
 class Contact extends Component {
+    constructor(props) {
+        super (props)
+        this.state = {
+            name: '',
+            email: '',
+            phoneNumber: '',
+            message: ''
+        }
+    }   
+
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        // alert('submitted')
+        e.preventDefault()
+
+        // if (!this.validateMail()) {
+        //     return;
+        //   }
+      const templateParams = {
+            from_name: this.state.name + " (" + this.state.email + ") and (" + this.state.phoneNumber + ")" ,
+            to_name: 'johnwondoh@gmail.com',
+            feedback: this.state.message
+          };
+    }
+
+    sendEmail = (e) => {
+        e.preventDefault();
+        console.log(e.target)
+
+        const templateParams = {
+            from_name: this.state.name + " (" + this.state.email + ") and (" + this.state.phoneNumber + ")" ,
+            to_name: 'johnwondoh@gmail.com',
+            message_html: this.state.message
+          };
+
+        emailjs.send('gmail', 'template_T2w1yx1v', templateParams, 'user_NGECXC5mrzzRi4tQAUhzw')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
+
+    resetForm = () =>{
+        this.setState({
+            name: '',
+            email: '',
+            phoneNumber: '',
+            message: ''
+        })
+    }
+
+
+
     render() {
         const { classes } = this.props
         return (
@@ -138,26 +202,43 @@ class Contact extends Component {
                         <Col md={6}>
                         <div>
                         <h3>Send me a message</h3>
-                            <form className={classes.formStyle + "mx-sm-3 mb-3 mt-3"}>
+                        <div class="alert alert-warning" role="alert">
+                            A simple primary alert—check it out!
+                        </div>
+                            <form 
+                                onSubmit={this.sendEmail}
+                                className={classes.formStyle + "mx-sm-3 mb-3 mt-3"}>
                                 
                                 <div className="form-group row mx-3 mb-2">
                                     <label htmlFor='name' className="col-sm-4 labelStyle">Name *</label>
                                     <input type='text' id='name' 
-                                    required minLength='2' maxLength='20'
-                                    className="form-control col-sm-8" placeholder='enter your name' />
+                                        name='name'
+                                        value={this.state.name}
+                                        onChange={this.handleChange}
+                                        required minLength='2' maxLength='20'
+                                        className="form-control col-sm-8" 
+                                        placeholder='enter your name' />
                                 </div>
                                 <div className="form-group row mx-3 mb-2">
                                     <label htmlFor='email' className="col-sm-4 labelStyle">Email *</label>
-                                    <input type='text' id='email' className="form-control col-sm-8" placeholder='enter your email address' />
+                                    <input type='text' id='email' 
+                                        name='email'
+                                        value={this.state.email}
+                                        onChange={this.handleChange}
+                                        className="form-control col-sm-8" 
+                                        placeholder='enter your email address' />
                                 </div>
                                 <div className="form-group row mx-3 mb-2">
                                     <label htmlFor='phone' className="col-sm-4 labelStyle">Phone Number </label>
                                     <input type='tel' id='phone' 
-                                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                                    maxLength='15'
-                                    minLength='9'
-                                    className="form-control col-sm-8" 
-                                    placeholder='enter your phone number' />
+                                        name='phoneNumber'
+                                        value={this.state.phoneNumber}
+                                        onChange={this.handleChange}
+                                        // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                        maxLength='15'
+                                        minLength='9'
+                                        className="form-control col-sm-8" 
+                                        placeholder='enter your phone number' />
                                 </div>
                                 {/* <div className="form-group row mx-sm-3 mb-2">
                                     <label htmlFor='phone' class="col-sm-4 labelStyle">Phone Number </label>
@@ -165,14 +246,24 @@ class Contact extends Component {
                                 </div> */}
                                 <div className="form-group row mx-3 mb-2">
                                     <label htmlFor='message' className="col-sm-4 labelStyle">Message</label>
-                                    <textarea type='textarea' id='message' className="form-control col-sm-8" 
+                                    <textarea type='textarea' id='message' 
+                                        name='message'
+                                        value={this.state.message}
+                                        onChange={this.handleChange}
+                                        className="form-control col-sm-8" 
                                         rows='5'> 
                                     </textarea>
                                     {/* <input type='textarea' id='message' className="form-control col-sm-10" placeholder='write your message here' /> */}
                                 </div>
                                 <div className="form-group mx-3 mb-2">
-                                <input className="btn btn-secondary w-25 mr-3" type='reset' value='Cancel'/>
-                                <input className="btn btn-success w-50" type='submit' value='Send'/>
+                                <input className="btn btn-secondary w-25 mr-3" 
+                                    type='reset'
+                                    onClick={this.resetForm} 
+                                    value='Cancel'/>
+                                <input className="btn btn-success w-50" 
+                                    type='submit'
+                                    // onClick={this.handleSubmit}  
+                                    value='Send'/>
                                 </div>
                                 {/* <button>Cancel</button>
                                 <button>Send</button> */}
