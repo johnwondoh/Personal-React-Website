@@ -94,7 +94,14 @@ const styles = {
         }
     },
     errorMessage: {
-        backgroundColor: 'rgba(245, 243, 118, 1)'
+        // backgroundColor: 'rgba(245, 224, 118, 0.7)'
+        background: 'rgb(42,35,158)',
+        background: 'linear-gradient(90deg, rgba(42,35,158,0) 0%, rgba(245,210,102,0.7) 35%, rgba(242,208,114,0.7) 58%, rgba(0,212,255,0) 100%)'
+    },
+    successMessage: {
+        // backgroundColor: 'rgba(245, 224, 118, 0.7)'
+        background: 'rgb(42,35,158)',
+        background: 'linear-gradient(90deg, rgba(42,35,158,0) 0%, rgba(77,199,33,1) 35%, rgba(80,207,33,1) 58%, rgba(0,212,255,0) 100%)'
     }
 }
 
@@ -105,7 +112,9 @@ class Contact extends Component {
             name: '',
             email: '',
             phoneNumber: '',
-            message: ''
+            message: '',
+            error: false,
+            success: false 
         }
     }   
 
@@ -141,9 +150,22 @@ class Contact extends Component {
 
         emailjs.send('gmail', 'template_T2w1yx1v', templateParams, 'user_NGECXC5mrzzRi4tQAUhzw')
             .then((result) => {
-                console.log(result.text);
+                // console.log(result.text);
+                this.setState({
+                    success: true
+                })
+                this.resetForm()
+                setTimeout(() => {
+                    this.setState({success:false});
+               },5000); 
             }, (error) => {
-                console.log(error.text);
+                // console.log(error.text);
+                this.setState({
+                    error: true
+                })
+                setTimeout(() => {
+                    this.setState({success:false});
+               },5000); 
             });
     }
 
@@ -160,6 +182,12 @@ class Contact extends Component {
 
     render() {
         const { classes } = this.props
+        const successVisibility = {
+            visibility: this.state.success ? 'visible' : 'hidden'
+        }
+        const errorVisibility = {
+            visibility: this.state.error ? 'visible' : 'hidden'
+        }
         return (
             <section id='contact' className={classes.sectionStyle}>
                 <div className={classes.sectionHeader}>
@@ -202,9 +230,19 @@ class Contact extends Component {
                         <Col md={6}>
                         <div>
                         <h3>Send me a message</h3>
-                        <div class="alert alert-warning" role="alert">
-                            A simple primary alert—check it out!
+                        <div className={classes.errorMessage} 
+                            style={errorVisibility}
+                            role="alert">
+                            not sent :( use email
                         </div>
+                        <div className={classes.successMessage} 
+                            style={successVisibility}
+                            role="alert">
+                            sent :)
+                        </div>
+                        {/* <div class="alert alert-warning" role="alert">
+                            A simple primary alert—check it out!
+                        </div> */}
                             <form 
                                 onSubmit={this.sendEmail}
                                 className={classes.formStyle + "mx-sm-3 mb-3 mt-3"}>
