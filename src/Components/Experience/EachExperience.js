@@ -42,7 +42,8 @@ const styles = {
         paddingTop: '0em',
         paddingBottom: '1.5em',
         fontFamily: 'Open Sans',
-        borderRadius: '12px',
+        borderRadius: '30px',
+        overflow: 'hidden',
         // boxShadow: '8px 8px 6px -6px rgba(0, 0, 0, 0.5)',
         boxShadow: ' 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 100px rgba(0, 0, 0, 0.06), 0 20px 30px rgba(0, 0, 0, 0.12)',
         border: 'none'

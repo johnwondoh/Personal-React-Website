@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import { removeData } from 'jquery';
 
 const styles = {
+    section: {
+        background: '#E0EAFC',  /* fallback for old browsers */
+        background: '-webkit-linear-gradient(to right, rgba(207, 222, 243, 0.3), rgba(224, 234, 252, 0.3))',  /* Chrome 10-25, Safari 5.1-6 */
+        background: 'linear-gradient(to right, rgba(207, 222, 243, 0.3), rgba(224, 234, 252, 0.3))', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    },
     sectionHeader: {
         paddingTop: '2em',
         paddingBottom: '2em',
@@ -10,9 +18,9 @@ const styles = {
         // background: '#abbaab',  /* fallback for old browsers */
         // background: '-webkit-linear-gradient(to right, #ffffff, #abbaab)',  /* Chrome 10-25, Safari 5.1-6 */
         // background: 'linear-gradient(to right, #ffffff, #abbaab)', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background: '#E0EAFC',  /* fallback for old browsers */
-        background: '-webkit-linear-gradient(to right, rgba(207, 222, 243, 0.3), rgba(224, 234, 252, 0.3))',  /* Chrome 10-25, Safari 5.1-6 */
-        background: 'linear-gradient(to right, rgba(207, 222, 243, 0.3), rgba(224, 234, 252, 0.3))', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        // background: '#E0EAFC',  /* fallback for old browsers */
+        // background: '-webkit-linear-gradient(to right, rgba(207, 222, 243, 0.3), rgba(224, 234, 252, 0.3))',  /* Chrome 10-25, Safari 5.1-6 */
+        // background: 'linear-gradient(to right, rgba(207, 222, 243, 0.3), rgba(224, 234, 252, 0.3))', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
         '& h2': {
             textAlign: 'center',
@@ -31,20 +39,20 @@ const styles = {
             fontFamily: 'Open Sans',
             fontSize: '1.1em',
             lineHeight: '1.7em',
-            width: '55%',
+            width: '65%',
             ['@media (max-width:992px)']: {
-                width: '65%'
-            },
-            ['@media (max-width:780px)']: {
                 width: '75%'
             },
+            ['@media (max-width:780px)']: {
+                width: '85%'
+            },
             ['@media (max-width:576px)']: {
-                width: '90%'
+                width: '95%'
             },
             margin: 'auto',
             // boxShadow: '0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 -12px 30px 0px rgba(0,0,0,0.075)',
             // color: 'white',
-            textAlign: 'left',
+            textAlign: 'center',
             // marginBottom: '0.5em'
             '& hr': {
                 border: '0',
@@ -63,10 +71,48 @@ const styles = {
         }
         
     },
-    awards: {
-        // backgroundColor: 'blue',
-        width: '85%',
-        margin: 'auto'
+    // awards: {
+    //     // backgroundColor: 'blue',
+    //     width: '85%',
+    //     margin: 'auto'
+    // }
+    card: {
+        width: '350px',
+        paddingTop: '10px',
+        margin: '5px',
+        // border: '1px solid red',
+        borderRadius: '12px',
+        // boxShadow: '0 3rem 6rem rgba(0, 0, 0, .1)',
+        boxShadow: '0 3px 10px rgba(0, 0, 0, 0.1)',
+        // backgroundColor: 'black',
+        '& img': {
+            width: '100%',
+            display: 'block',
+            height: '18rem',
+            objectFit: 'scale-down'
+        },
+        '& p': {
+            paddingLeft: '10px',
+        }
+    },
+    cardContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap', 
+        margin: 'auto',
+        // backgroundColor: 'red',
+        paddingBottom: '20px',
+        // width: '65%',
+        width: '65%',
+            ['@media (max-width:992px)']: {
+                width: '85%'
+            },
+            ['@media (max-width:780px)']: {
+                width: '95%'
+            },
+            ['@media (max-width:576px)']: {
+                width: '95%'
+            },
     }
 }
 
@@ -84,53 +130,94 @@ class About extends Component {
             // borderRight: '9px ridge rgb(13, 117, 212)',
         }
         return (
-            <section id='about'>
+            <section id='about' className={classes.section}>
                 <div className={classes.sectionHeader}>
                 <h2>About me</h2>
                 <div></div>
                 <img src={imgPath} alt="John's profile picture"/>
                 <p style={leftBorderStyle}>
                     I am a computer scientist with a Ph.D. in Computer and Information Science 
-                    from the University of South Australia (UniSA). I have advanced research experience, 
-                    a problem-solving mentality, and practical programming skills.
+                    from the AI and Software Engineering Lab at the University of South Australia (UniSA). 
+                    {/* I did most of my most of my research in the AI and Software Engineering Lab at UniSA,  */}
+                    I've collaborated with industry partners such at the Data-to-Decision (D2D) CRC, 
+                    Defence Science and Technology (DST), Australian Federal Police. 
+                </p>
+                <p>
+                    I have advanced research experience, a problem-solving mentality, and practical programming skills.
                     {/* <hr /> */}
                 </p>
                 
-                <p style={rightBorderStyle}>
+                {/* <p style={rightBorderStyle}>
                     I am a Data Scientist and Machine Learning expert with experiences using ML and analytics
                     techniques in several projects for organisations such as the Data-to-Decision CRC, 
                     Defence Science and Technology (DST), Australian Federal Police (AFP), and UniSA.
-                </p>
-                <p style={leftBorderStyle}>
+                </p> */}
+                {/* <p style={leftBorderStyle}>
                     I am an educator and I am the Lecturer and Course Coordinator for Database Fundamentals
                     and Web Development at UniSA.
-                </p>
-                <p style={rightBorderStyle}>
+                </p> */}
+                {/* <p style={rightBorderStyle}>
                     I am a developer, with experience full-stack developing Web, Mobile, and Desktop 
                     applications.
-                </p>
-                {/* <p>
-                    I am a computer scientist with a Ph.D. in Computer and Information Science 
-                    from the University of South Australia (UniSA). I have advanced research experience, 
-                    a problem-solving mentality, and practical programming skills. With regards to my 
-                    research experience, I have worked on research problems in computer science and authored 
-                    several peer-reviewed research publications in top-ranked conferences. 
-                </p>
-                <p>
-                    I am proficient in data science and its relating technologies including 
-                    SAS OnDemand (enterprise miner) and RapidMiner, as well as, data science modules in 
-                    Python such as Numpy, Pandas, TensorFlow etc. In Addition, I am familiar with Machine 
-                    Learning concepts such as Decision Trees, KNN, Rule-based Classifiers, Bayes Network, 
-                    Artificial Neural Network, Support Vector Machines, Logistic Regression among others. 
-                </p>
-                <p>    
-                    I also worked to develop my interest as a full-stack web/mobile developer. In this regard, 
-                    I have advanced my skills in HTML, CSS, JavaScript (front-end), NodeJS (backend) and important 
-                    libraries such as jQuery and Bootstrap. I am also proficient in the Python programming language 
-                    and have tutored it in an online course at the University of South Australia. I also have knowledge 
-                    in both SQL databases, such as PostgreSQL and NoSQL databases such as Mongo DB.
                 </p> */}
+
+                
+
+                
+           
                 </div>
+                <div className={classes.cardContainer}>
+                    <div className={classes.card}>
+                        <img src='/images/about/data_science.png' />
+                        <p>
+                            {/* I am a Data Scientist with ML and analytics
+                            techniques. I'v in several projects for organisations such as the Data-to-Decision CRC,
+                            Defence Science and Technology, Australian Federal Police, and UniSA. */}
+                            I am a Data Scientist and Machine Learning expert with experiences using ML and analytics
+                            techniques in several projects for organisations such as the D2D CRC,
+                            DST, AFP, and UniSA.
+                        </p>
+                    </div>
+                    <div className={classes.card}>
+                        <img src='/images/about/teacher.png' />
+                        <p>
+                            I am an educator and I am the Lecturer and Course Coordinator for Database Fundamentals
+                            and Web Development at UniSA.
+                        </p>
+                    </div>
+                    <div className={classes.card}>
+                        <img src='/images/about/dev4.png' />
+                        <p>
+                            I am a developer, with experience full-stack developing Web, Mobile, and Desktop
+                            applications.
+                        </p>
+                    </div>
+                </div>
+                {/* <Row className={classes.cardContainer}>
+                    <Col lg={4} sm={6} xs={12} className={classes.card}>
+                        <img src='/images/about/data_science.png' />
+                        <p>
+                            I am a Data Scientist with ML and analytics
+                            techniques. I'v in several projects for organisations such as the Data-to-Decision CRC,
+                            Defence Science and Technology, Australian Federal Police, and UniSA.
+                            
+                        </p>
+                    </Col>
+                    <Col lg={4} sm={6} xs={12} className={classes.card}>
+                        <img src='/images/about/teacher.png' />
+                        <p>
+                            I am an educator and I am the Lecturer and Course Coordinator for Database Fundamentals
+                            and Web Development at UniSA.
+                        </p>
+                    </Col>
+                    <Col lg={4} sm={6} xs={12} className={classes.card}>
+                        <img src='/images/about/dev4.png' />
+                        <p>
+                            I am a developer, with experience full-stack developing Web, Mobile, and Desktop
+                            applications.
+                        </p>
+                    </Col>
+                </Row> */}
             </section>
         );
     }

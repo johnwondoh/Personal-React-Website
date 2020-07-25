@@ -119,7 +119,7 @@ class Frameworks extends Component {
                 {
                     title: 'HTML 5',
                     rate: 4.5,
-                    imageUrl: '/images/logos/HTML5.png',
+                    imageUrl: '/images/logos/HTML5.jpg',
                     type: 'language'
                 },
                 {
@@ -205,7 +205,7 @@ class Frameworks extends Component {
                 {
                     title: 'SQLite',
                     rate: 5, 
-                    imageUrl: '/images/logos/SQLite370.svg.png',
+                    imageUrl: '/images/logos/SQLite370.svg.jpg',
                     type: 'database'    
                 },
                 {
@@ -235,8 +235,8 @@ class Frameworks extends Component {
                 {
                     title: 'Tableau',
                     rate: 5, 
-                    imageUrl: '/images/logos/tableau_logo_3_1.png',
-                    type: 'software'     
+                    imageUrl: '/images/logos/tableau_logo_3_1.jpg',
+                    type: 'software' 
                 },
                 {
                     title: 'Git',
@@ -271,7 +271,7 @@ class Frameworks extends Component {
                 {
                     title: 'Scikit-learn',
                     rate: 5, 
-                    imageUrl: '/images/logos/Scikit_learn_logo_small.svg.png',
+                    imageUrl: '/images/logos/Scikit_learn_logo_small.svg.jpg',
                     type: 'library'   
                 }
             ]
@@ -288,7 +288,7 @@ class Frameworks extends Component {
                 rate={s.rate} type={s.type} 
                 key={uuidv4()}/>
                 ) } </Row></div>
-        return category
+        return category 
     }
 
     render() {

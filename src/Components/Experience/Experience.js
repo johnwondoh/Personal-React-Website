@@ -161,7 +161,7 @@ class Experience extends Component {
                 {
                     name: 'Data to Decisions CRC',
                     abreviation: 'D2D CRC',
-                    src: '/images/companies/D2DCRC-logo.png'
+                    src: '/images/companies/D2DCRC-logo.jpg'
                 },
                 {
                     name: 'Defence Science and Technology',
