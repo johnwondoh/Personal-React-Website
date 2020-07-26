@@ -11,8 +11,11 @@ const styles = {
         // backgroundColor: '#f2f4f5',
         // height: '18rem',
         '& img' : {
-            width: '8rem',
-            margin: 'auto'
+            // width: '8rem',
+            margin: 'auto',
+            width: '100%',
+            height: '8rem',
+            objectFit: 'scale-down'
         },
         // border: '2px solid #1f8dc4',
         // borderRadius: '5%',
@@ -37,7 +40,8 @@ const styles = {
         // border: '5px solid rgb(6, 133, 196)',
         borderRadius: '12px',
         // boxShadow: '8px 8px 6px -6px rgba(0, 0, 0, 0.5)',
-        boxShadow: '0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 -12px 30px 0px rgba(0,0,0,0.075)',
+        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
+        // boxShadow: '0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 -12px 30px 0px rgba(0,0,0,0.075)',
         fontFamily: 'Open Sans',
         // border: 'none',
         // margin: '0 0.5em',

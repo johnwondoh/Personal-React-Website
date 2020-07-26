@@ -50,11 +50,11 @@ const styles = {
         backgroundSize: '60em',
         // background: 'rgb(221,233,249)',
         // background: 'linear-gradient(45deg, rgba(221,233,249,0.5) 0%, rgba(238,245,251,0.5) 50%, rgba(229,244,252,0.5) 80%, rgba(221,229,249,0.5) 100%)',
-        paddingBottom: '3em'
+        paddingBottom: '3em' 
         // marginTop: '2rem'
     },
     experienceFlex: {
-        width: '80%',
+        width: '70%',
         margin: 'auto',
         // display: 'grid',
         // gridTemplateColumns: '500px 500px',

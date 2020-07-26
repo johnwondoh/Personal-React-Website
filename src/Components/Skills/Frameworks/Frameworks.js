@@ -76,7 +76,8 @@ const styles = {
         // backgroundImage: `linear-gradient(0deg, rgba(133, 144, 170, 0.5), rgba(133, 144, 170, 0.5)), url(${patternPath})`,
         backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255,0.5), rgba(255, 255, 255,0.5)), url(${patternPath})`,
         borderRadius: '12px',
-        boxShadow: '8px 8px 6px -6px rgba(0, 0, 0, 0.5)',
+        // boxShadow: '8px 8px 6px -6px rgba(0, 0, 0, 0.5)',
+        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
         padding: '20px',
         paddingTop:'40px'
       },

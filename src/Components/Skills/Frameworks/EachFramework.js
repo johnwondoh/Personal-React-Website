@@ -28,7 +28,7 @@ class EachFramework extends Component {
     
     render() {
         const {classes} = this.props
-        const bigLogo = ['NodeJS', 'Scikit-learn', 'Entity Framework', 'MS SQL Server', 'SQLite']
+        const bigLogo = ['NodeJS', 'Scikit-learn', 'MS SQL Server', 'SQLite']
         // console.log(bigLogo.includes(this.props.title))
         let rangeArray = bigLogo.includes(this.props.title) ?
             12 : 6

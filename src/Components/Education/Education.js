@@ -87,7 +87,7 @@ class Education extends Component {
                     startYear: 2008,
                     endYear: 2012,
                     logo:'/images/companies/UMaT-logo-238x300.jpg',
-                    moreInfo: ''
+                    moreInfo: 'I completed with a High Distinction'
                 }
             ]
         }

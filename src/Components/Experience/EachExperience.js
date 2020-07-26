@@ -14,6 +14,8 @@ const styles = {
         marginTop: '0.7em'
     },
     button: {
+        outline: 'none',
+        border: 'none',
         width: '20em',
         ['@media (max-width:576px)']: {
             width: '90%',

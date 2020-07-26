@@ -66,8 +66,9 @@ const styles = {
             marginTop: '2em',
             marginBottom: '1em',
             width: '15em',
-            borderRadius: '15%',
-            boxShadow: '5px 5px 5px 2px rgba(0, 0, 0,0.5)'
+            borderRadius: '50%',
+            boxShadow: '2px 6px 10px rgba(0, 0, 0, 0.3)',
+            // boxShadow: '5px 5px 5px 2px rgba(0, 0, 0,0.5)'
         }
         
     },
@@ -77,13 +78,15 @@ const styles = {
     //     margin: 'auto'
     // }
     card: {
+        // backgroundColor: 'rgba(207, 222, 243, 0.3)',
+        // backgroundColor: 'rgba(32, 58, 67, 0.9)',
         width: '350px',
         paddingTop: '10px',
-        margin: '5px',
+        margin: '7px',
         // border: '1px solid red',
         borderRadius: '12px',
         // boxShadow: '0 3rem 6rem rgba(0, 0, 0, .1)',
-        boxShadow: '0 3px 10px rgba(0, 0, 0, 0.1)',
+        boxShadow: '0 3px 10px rgba(0, 0, 0, 0.2)',
         // backgroundColor: 'black',
         '& img': {
             width: '100%',
@@ -101,18 +104,18 @@ const styles = {
         flexWrap: 'wrap', 
         margin: 'auto',
         // backgroundColor: 'red',
-        paddingBottom: '20px',
+        paddingBottom: '2.5em',
         // width: '65%',
-        width: '65%',
-            ['@media (max-width:992px)']: {
-                width: '85%'
-            },
-            ['@media (max-width:780px)']: {
-                width: '95%'
-            },
-            ['@media (max-width:576px)']: {
-                width: '95%'
-            },
+        // width: '75%',
+        //     ['@media (max-width:992px)']: {
+        //         width: '85%'
+        //     },
+        //     ['@media (max-width:780px)']: {
+        //         width: '95%'
+        //     },
+        //     ['@media (max-width:576px)']: {
+        //         width: '95%'
+        //     },
     }
 }
 
@@ -136,14 +139,10 @@ class About extends Component {
                 <div></div>
                 <img src={imgPath} alt="John's profile picture"/>
                 <p style={leftBorderStyle}>
-                    I am a computer scientist with a Ph.D. in Computer and Information Science 
-                    from the AI and Software Engineering Lab at the University of South Australia (UniSA). 
-                    {/* I did most of my most of my research in the AI and Software Engineering Lab at UniSA,  */}
-                    I've collaborated with industry partners such at the Data-to-Decision (D2D) CRC, 
-                    Defence Science and Technology (DST), Australian Federal Police. 
-                </p>
-                <p>
-                    I have advanced research experience, a problem-solving mentality, and practical programming skills.
+                    I am a <em>Computer Scientist</em> with a PhD from the AI and Software Engineering Lab at the University of South Australia (UniSA). 
+                     I've collaborated with industry partners such the Data-to-Decision (D2D) CRC, the 
+                    Defence Science and Technology (DST), and the Australian Federal Police. 
+                     I have advanced research experience, a problem-solving mentality, and practical programming skills.
                     {/* <hr /> */}
                 </p>
                 
@@ -173,23 +172,21 @@ class About extends Component {
                             {/* I am a Data Scientist with ML and analytics
                             techniques. I'v in several projects for organisations such as the Data-to-Decision CRC,
                             Defence Science and Technology, Australian Federal Police, and UniSA. */}
-                            I am a Data Scientist and Machine Learning expert with experiences using ML and analytics
-                            techniques in several projects for organisations such as the D2D CRC,
-                            DST, AFP, and UniSA.
+                            I am a Data Scientist and Machine Learning expert with practical experience using ML and analytics techniques in several projects for organisations such as the D2D CRC, DST, AFP, and UniSA.
                         </p>
                     </div>
                     <div className={classes.card}>
                         <img src='/images/about/teacher.png' />
                         <p>
-                            I am an educator and I am the Lecturer and Course Coordinator for Database Fundamentals
+                            I am an educator and teacher. I currently work as the Lecturer and Course Coordinator for Database Fundamentals
                             and Web Development at UniSA.
                         </p>
                     </div>
                     <div className={classes.card}>
                         <img src='/images/about/dev4.png' />
                         <p>
-                            I am a developer, with experience full-stack developing Web, Mobile, and Desktop
-                            applications.
+                            I am an application developer with full-stack developing experience 
+                            in Web, Mobile, and Desktop applications domains.
                         </p>
                     </div>
                 </div>
