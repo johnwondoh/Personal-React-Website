@@ -124,6 +124,9 @@ class About extends Component {
     render() {
         const { classes } = this.props
         let imgPath = process.env.PUBLIC_URL + '/images/Lap_Photo.jpg'
+        let dsPath = process.env.PUBLIC_URL + '/images/about/data_science.png'
+        let edPath = process.env.PUBLIC_URL + '/images/about/teacher.png'
+        let dePath = process.env.PUBLIC_URL + '/images/about/dev4.png'
 
         const leftBorderStyle = {
             // borderLeft: '9px ridge rgb(13, 117, 212)',
@@ -146,28 +149,10 @@ class About extends Component {
                     {/* <hr /> */}
                 </p>
                 
-                {/* <p style={rightBorderStyle}>
-                    I am a Data Scientist and Machine Learning expert with experiences using ML and analytics
-                    techniques in several projects for organisations such as the Data-to-Decision CRC, 
-                    Defence Science and Technology (DST), Australian Federal Police (AFP), and UniSA.
-                </p> */}
-                {/* <p style={leftBorderStyle}>
-                    I am an educator and I am the Lecturer and Course Coordinator for Database Fundamentals
-                    and Web Development at UniSA.
-                </p> */}
-                {/* <p style={rightBorderStyle}>
-                    I am a developer, with experience full-stack developing Web, Mobile, and Desktop 
-                    applications.
-                </p> */}
-
-                
-
-                
-           
                 </div>
                 <div className={classes.cardContainer}>
                     <div className={classes.card}>
-                        <img src='/images/about/data_science.png' />
+                        <img src= {dsPath}/>
                         <p>
                             {/* I am a Data Scientist with ML and analytics
                             techniques. I'v in several projects for organisations such as the Data-to-Decision CRC,
@@ -176,14 +161,14 @@ class About extends Component {
                         </p>
                     </div>
                     <div className={classes.card}>
-                        <img src='/images/about/teacher.png' />
+                        <img src= {edPath}/>
                         <p>
                             I am an educator and teacher. I currently work as the Lecturer and Course Coordinator for Database Fundamentals
                             and Web Development at UniSA.
                         </p>
                     </div>
                     <div className={classes.card}>
-                        <img src='/images/about/dev4.png' />
+                        <img src= {dePath}/>
                         <p>
                             I am an application developer with full-stack developing experience 
                             in Web, Mobile, and Desktop applications domains.
