@@ -39,7 +39,7 @@ class EachFramework extends Component {
         return (
             <Col lg={3} md={4} xs={rangeArray} className={classes.skill}>
                 <div className='p-2 text-center'>
-                    <img src={this.props.imageUrl} alt={this.props.title}/>
+                    <img src={process.env.PUBLIC_URL + this.props.imageUrl} alt={this.props.title}/>
                     <h4 className='text-center'>{this.props.title}</h4>
                     {/* <p>{this.props.rate}</p> */}
                 </div>

@@ -85,7 +85,7 @@ class EachEducation extends Component {
             <Col md={6} className={classes.main} >
             {/* <div className={classes.main} > */}
                 <Card className={classes.card}>
-                    <Card.Img variant="left" src={this.props.logo}/>
+                    <Card.Img variant="left" src={process.env.PUBLIC_URL + this.props.logo}/>
                     <Card.Body className='mx-0 px-0' >
                         <Card.Title className='mx-0 pb-0'>
                             {this.props.institution}

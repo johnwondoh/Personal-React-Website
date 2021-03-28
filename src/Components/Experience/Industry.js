@@ -29,7 +29,7 @@ class Industry extends Component {
         return (
             <Col lg={4} md={4} sm={6} xs={12} className={classes.skill}>
                 <div className='p-2 text-center'>
-                    <img src={this.props.src} alt={this.props.name}/>
+                    <img src={process.env.PUBLIC_URL + this.props.src} alt={this.props.name}/>
                     <h4 className='text-center'>{this.props.name}</h4>
                     <h5>({this.props.abreviation})</h5>
                     {/* <p>{this.props.rate}</p> */}
